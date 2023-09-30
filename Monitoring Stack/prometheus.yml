@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'cadvisor'
+    static_configs:
+      - targets: ['cadvisor:8080'] # Use the service name 'cadvisor' and the port cAdvisor is running on
+
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node-exporter:9100'] # Use the service name 'node-exporter' and the port Node Exporter is running on
